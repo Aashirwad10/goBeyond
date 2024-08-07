@@ -2,6 +2,14 @@ import React, { useEffect, useRef, useState } from 'react';
 import '../styles/Pokhara.css'; 
 
 import pokhara from '../assets/pokhara.jpg';
+import pokhara2 from '../assets/pokhara2.jpg';
+import pokhara3 from '../assets/pokhara3.jpg';
+import pokhara4 from '../assets/pokhara4.jpg';
+import pokhara5 from '../assets/pokhara5.jpg';
+import fewalake from '../assets/fewalake.jpg';
+import shantipagoda from '../assets/shantipagoda.jpeg';
+import devisfalls from '../assets/devisfalls.jpg';
+import sarangkot from '../assets/sarangkot.jpg';
 
 const PokharaCarousel = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -47,13 +55,13 @@ const PokharaCarousel = () => {
                             <img src={pokhara} alt="Pokhara Image 1" />
                         </div>
                         <div className="pokhara-carousel-item">
-                            <img src={pokhara} alt="Pokhara Image 2" />
+                            <img src={pokhara2} alt="Pokhara Image 2" />
                         </div>
                         <div className="pokhara-carousel-item">
-                            <img src={pokhara} alt="Pokhara Image 3" />
+                            <img src={pokhara3} alt="Pokhara Image 3" />
                         </div>
                         <div className="pokhara-carousel-item">
-                            <img src={pokhara} alt="Pokhara Image 4" />
+                            <img src={pokhara4} alt="Pokhara Image 4" />
                         </div>
                     </div>
                     <a className="pokhara-prev" onClick={prevSlide}>&#10094;</a>
@@ -63,31 +71,31 @@ const PokharaCarousel = () => {
 
             <section className="pokhara-content">
                 <div className="pokhara-content-item">
-                    <img src={pokhara} alt="Image 1" className="pokhara-content-image" />
+                    <img src={fewalake} alt="Image 1" className="pokhara-content-image" />
                     <div className="pokhara-content-desc">
-                        <h2>Place Title 1</h2>
-                        <p>Description of place 1. Pokhara is known for its stunning scenery, adventurous activities, and cultural experiences.</p>
+                        <h2>Fewa Lake</h2>
+                        <p>The second-largest lake in Nepal, offering boating, fishing, and stunning views of the Annapurna range.</p>
                     </div>
                 </div>
                 <div className="pokhara-content-item">
-                    <img src={pokhara} alt="Image 2" className="pokhara-content-image" />
+                    <img src={shantipagoda} alt="Image 2" className="pokhara-content-image" />
                     <div className="pokhara-content-desc">
-                        <h2>Place Title 2</h2>
-                        <p>Description of place 2. Pokhara offers breathtaking views of the Annapurna mountain range and serene lakes.</p>
+                        <h2>World Peace Pagoda (Shanti Stupa)</h2>
+                        <p>A Buddhist pagoda situated on a hilltop, providing panoramic views of Pokhara city, Phewa Lake, and the Himalayas.</p>
                     </div>
                 </div>
                 <div className="pokhara-content-item">
-                    <img src={pokhara} alt="Image 3" className="pokhara-content-image" />
+                    <img src={devisfalls} alt="Image 3" className="pokhara-content-image" />
                     <div className="pokhara-content-desc">
-                        <h2>Place Title 3</h2>
-                        <p>Description of place 3. Explore the caves, waterfalls, and the vibrant local markets of Pokhara.</p>
+                        <h2>Davis Falls (Patale Chhango)</h2>
+                        <p>A unique waterfall that flows into an underground tunnel, named after a tourist who tragically fell into it.</p>
                     </div>
                 </div>
                 <div className="pokhara-content-item">
-                    <img src={pokhara} alt="Image 4" className="pokhara-content-image" />
+                    <img src={sarangkot} alt="Image 4" className="pokhara-content-image" />
                     <div className="pokhara-content-desc">
-                        <h2>Place Title 4</h2>
-                        <p>Description of place 4. Enjoy paragliding, boating, and other exciting activities in Pokhara.</p>
+                        <h2>Sarangkot</h2>
+                        <p>A hill station known for its breathtaking sunrise and sunset views over the Annapurna and Dhaulagiri mountain ranges.</p>
                     </div>
                 </div>
             </section>
@@ -97,13 +105,13 @@ const PokharaCarousel = () => {
                     <img src={pokhara} alt="Gallery Image 1" />
                 </div>
                 <div className="pokhara-gallery-item">
-                    <img src={pokhara} alt="Gallery Image 2" />
+                    <img src={pokhara2} alt="Gallery Image 2" />
                 </div>
                 <div className="pokhara-gallery-item">
-                    <img src={pokhara} alt="Gallery Image 3" />
+                    <img src={pokhara4} alt="Gallery Image 3" />
                 </div>
                 <div className="pokhara-gallery-item">
-                    <img src={pokhara} alt="Gallery Image 4" />
+                    <img src={pokhara5} alt="Gallery Image 4" />
                 </div>
             </section>
         </div>
