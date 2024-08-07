@@ -1,0 +1,205 @@
+/* Whattosee.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.unique-header {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.unique-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#unique-search {
+    padding: 10px;
+    width: 70%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.unique-login-profile img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.unique-popular-options {
+    padding: 20px;
+}
+
+.unique-options-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.unique-option {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 10px;
+    overflow: hidden;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.unique-option img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Adjust the fit */
+    transform: scale(0.5); /* Scale down the image */
+    transition: transform 0.3s; /* Smooth transition */
+}
+
+.unique-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-weight: bold;
+}
+
+.unique-option:hover .unique-overlay {
+    opacity: 1;
+}
+
+.unique-image-display {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.unique-image-box {
+    width: 200px;
+    height: 150px;
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s;
+}
+
+.unique-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.unique-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.unique-image-box:hover .unique-image-overlay {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease 0.3s, visibility 0.3s ease 0.3s;
+}
+
+.unique-top-attractions {
+    padding: 20px;
+}
+
+.unique-attractions-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.unique-attraction {
+    width: 220px;
+    margin: 10px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+}
+
+.unique-attraction img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.unique-attraction-info {
+    padding: 10px;
+    background: #fff;
+    border-top: 1px solid #ddd;
+}
+
+.unique-love-icon {
+    width: 20px;
+    height: 20px;
+    /* background: url('love-icon.png') no-repeat center center; */
+    background-size: cover;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+/* .unique-love-icon.loved {
+    background: url('love-icon-filled.png') no-repeat center center;
+} */
+
+.unique-attraction-name {
+    font-weight: bold;
+}
+
+/* Whattosee.css (continued) */
+
+.unique-rating {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.unique-circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    margin-right: 3px;
+    transition: background 0.3s;
+}
+
+.unique-circle.active {
+    background: #f39c12; /* Example color for active rating */
+}
+
+.unique-description {
+    font-size: 14px;
+    color: #555;
+}

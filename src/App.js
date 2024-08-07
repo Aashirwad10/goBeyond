@@ -5,6 +5,10 @@ import EverestPage from './pages/EverestPage';
 import MustangPage from './pages/MustangPage';
 import PokharaCarousel from './pages/PokharaCarousel';
 import KathmanduPage from './pages/KathmanduPage';
+import Whattosee from './components/Whattosee';
+import Whattodo from './components/Whattodo';
+import Exploremore from './components/Exploremore';
+import Essentials from './components/Essentials';
 
 import NavigationBar from './components/NavigationBar';
 import Footer from './components/Footer';
@@ -38,6 +42,10 @@ const App = () => {
                 <Route path="/mustang" element={<MustangPage />} />
                 <Route path="/pokhara" element={<PokharaCarousel />} />
                 <Route path="/kathmandu" element={<KathmanduPage />} />
+                <Route path="/whattosee" element={<Whattosee />} />
+                <Route path="/whattodo" element={<Whattodo />} />
+                <Route path="/exploremore" element={<Exploremore />} />
+                <Route path="/essentials" element={<Essentials />} />
             </Routes>
             {currentPath !== '/' && <Footer title={getTitle(currentPath)} />}
         </div>

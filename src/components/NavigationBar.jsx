@@ -9,10 +9,10 @@ const NavigationBar = () => {
         <h1><Link to="/" className="logo-link">goBeyond</Link></h1>
       </div>
       <ul className="navbar-menu">
-        <li><a href="#what-to-see">What to See</a></li>
-        <li><a href="#what-to-do">What to Do</a></li>
-        <li><a href="#explore-more">Explore More</a></li>
-        <li><a href="#essentials">Essentials</a></li>
+        <li><Link to="/whattosee" className="navbar-link">What to See</Link></li>
+        <li><Link to="/whattodo" className="navbar-link">What to Do</Link></li>
+        <li><Link to="/exploremore" className="navbar-link">Explore More</Link></li>
+        <li><Link to="/essentials" className="navbar-link">Essentials</Link></li>
       </ul>
     </nav>
   );
