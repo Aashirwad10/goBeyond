@@ -2,6 +2,14 @@ import React, { useEffect, useRef, useState } from 'react';
 import '../styles/Pokhara.css'; 
 
 import everest from '../assets/everest.jpg';
+import everest2 from '../assets/everest2.jpg';
+import everest3 from '../assets/everest3.jpg';
+import everest4 from '../assets/everest4.jpg'
+import everest5 from '../assets/everest5.jpg';
+import mounteverest from '../assets/mounteverest.jpg';
+import namchebazar from '../assets/namchebazar.webp';
+import gokyolake from '../assets/gokyolake.jpg';
+import sagarmathanationalpark from '../assets/sagaramathanationalpark.jpg';
 
 const EverestPage = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -47,13 +55,13 @@ const EverestPage = () => {
                             <img src={everest} alt="Pokhara Image 1" />
                         </div>
                         <div className="pokhara-carousel-item">
-                            <img src={everest} alt="Pokhara Image 2" />
+                            <img src={everest2} alt="Pokhara Image 2" />
                         </div>
                         <div className="pokhara-carousel-item">
-                            <img src={everest} alt="Pokhara Image 3" />
+                            <img src={everest3} alt="Pokhara Image 3" />
                         </div>
                         <div className="pokhara-carousel-item">
-                            <img src={everest} alt="Pokhara Image 4" />
+                            <img src={everest5} alt="Pokhara Image 4" />
                         </div>
                     </div>
                     <a className="pokhara-prev" onClick={prevSlide}>&#10094;</a>
@@ -63,47 +71,47 @@ const EverestPage = () => {
 
             <section className="pokhara-content">
                 <div className="pokhara-content-item">
-                    <img src={everest} alt="Image 1" className="pokhara-content-image" />
+                    <img src={mounteverest} alt="Image 1" className="pokhara-content-image" />
                     <div className="pokhara-content-desc">
-                        <h2>Place Title 1</h2>
-                        <p>Description of place 1. Pokhara is known for its stunning scenery, adventurous activities, and cultural experiences.</p>
+                        <h2>Mount Everest (Sagarmatha)</h2>
+                        <p>The tallest peak in the world, attracting climbers and trekkers from around the globe.</p>
                     </div>
                 </div>
                 <div className="pokhara-content-item">
-                    <img src={everest} alt="Image 2" className="pokhara-content-image" />
+                    <img src={namchebazar} alt="Image 2" className="pokhara-content-image" />
                     <div className="pokhara-content-desc">
-                        <h2>Place Title 2</h2>
-                        <p>Description of place 2. Pokhara offers breathtaking views of the Annapurna mountain range and serene lakes.</p>
+                        <h2>Namche Bazaar</h2>
+                        <p>The main trading center and hub for the Khumbu region, often considered the gateway to Everest.</p>
                     </div>
                 </div>
                 <div className="pokhara-content-item">
-                    <img src={everest} alt="Image 3" className="pokhara-content-image" />
+                    <img src={gokyolake} alt="Image 3" className="pokhara-content-image" />
                     <div className="pokhara-content-desc">
-                        <h2>Place Title 3</h2>
-                        <p>Description of place 3. Explore the caves, waterfalls, and the vibrant local markets of Pokhara.</p>
+                        <h2>Gokyo Lakes</h2>
+                        <p>A series of beautiful high-altitude lakes, popular for trekking and offering panoramic views of the Himalayas.</p>
                     </div>
                 </div>
                 <div className="pokhara-content-item">
-                    <img src={everest} alt="Image 4" className="pokhara-content-image" />
+                    <img src={sagarmathanationalpark} alt="Image 4" className="pokhara-content-image" />
                     <div className="pokhara-content-desc">
-                        <h2>Place Title 4</h2>
-                        <p>Description of place 4. Enjoy paragliding, boating, and other exciting activities in Pokhara.</p>
+                        <h2>Sagarmatha National Park</h2>
+                        <p>A UNESCO World Heritage Site, home to a diverse range of flora and fauna, as well as several trekking routes.</p>
                     </div>
                 </div>
             </section>
 
             <section className="pokhara-gallery">
                 <div className="pokhara-gallery-item">
-                    <img src={everest} alt="Gallery Image 1" />
+                    <img src={everest4} alt="Gallery Image 1" />
                 </div>
                 <div className="pokhara-gallery-item">
-                    <img src={everest} alt="Gallery Image 2" />
+                    <img src={everest2} alt="Gallery Image 2" />
                 </div>
                 <div className="pokhara-gallery-item">
-                    <img src={everest} alt="Gallery Image 3" />
+                    <img src={everest3} alt="Gallery Image 3" />
                 </div>
                 <div className="pokhara-gallery-item">
-                    <img src={everest} alt="Gallery Image 4" />
+                    <img src={everest5} alt="Gallery Image 4" />
                 </div>
             </section>
         </div>
