@@ -15,6 +15,30 @@ import nature from '../assets/nature.png';
 import culture from '../assets/culture.png';
 import newCat1 from '../assets/hiking.png';
 import newCat2 from '../assets/temple.png';
+import annapurna from '../assets/annapurna.jpg';
+import uppermustang from '../assets/uppermustang.jpg';
+import gosaikunda from '../assets/gosaikunda.jpg';
+import jankitemple from '../assets/janakitemple.webp';
+import boudhanathtemple from '../assets/boudha.jpg';
+import barahitemple from '../assets/barahi.jpg';
+import hyatt from '../assets/hyatt.webp';
+import dhulikhel from '../assets/dhulikhelresort.jpg';
+import soaltee from '../assets/soaltee.jpg';
+import mountaineering from '../assets/mountaineering.jpg'
+import waterrafting from '../assets/watrerrafting.jpg';
+import bunjee from '../assets/bunjee.jpg';
+import holi from '../assets/holi.webp';
+import woodcrafting from '../assets/woodcrafting.webp';
+import tharudance from '../assets/tharudance.jpeg';
+import dalbhat from '../assets/dalbhat.webp';
+import dhido from '../assets/dhido.jpg';
+import yomari from '../assets/yomari.jpg';
+import chitwannp from '../assets/chitwannationapark.jpg';
+import tilicho from '../assets/tilicholake.jpg';
+import lumbini from '../assets/lumbini.jpg';
+import dashain from '../assets/dashain.webp';
+import tihar from '../assets/tihar.webp';
+import shivaratri from '../assets/shivaratri.jpg';
 
 
 const Whattosee = () => {
@@ -34,27 +58,27 @@ const Whattosee = () => {
 
     const getImagesForCategory = (category) => {
         const images = {
-            hiking: [mustang, mustang, mustang],
-            temples: [everest, kathmandu, mustang],
-            hotels: [mustang, kathmandu, everest],
-            adventure: [mustang, everest, kathmandu],
-            culture: [kathmandu, mustang, everest],
-            food: [everest, mustang, kathmandu],
-            nature: [mustang, kathmandu, everest],
-            festivals: [kathmandu, mustang, everest],
+            hiking: [annapurna, uppermustang, gosaikunda],
+            temples: [jankitemple, boudhanathtemple, barahitemple],
+            hotels: [hyatt, dhulikhel, soaltee],
+            adventure: [mountaineering, waterrafting, bunjee],
+            culture: [holi, woodcrafting, tharudance],
+            food: [dalbhat, dhido, yomari],
+            nature: [chitwannp, tilicho, lumbini],
+            festivals: [dashain, tihar, shivaratri],
             newCat1: [everest, kathmandu, mustang],
             newCat2: [kathmandu, mustang, everest],
         };
 
         const names = {
-            hiking: ['Mountain Trails', 'Mountain xx', 'Mountain YY'],
-            temples: ['Sacred Temples', 'Temple A', 'Temple B'],
-            hotels: ['Cozy Stays', 'Hotel A', 'Hotel B'],
-            adventure: ['Thrilling Activities', 'Adventure A', 'Adventure B'],
-            culture: ['Cultural Sites', 'Site A', 'Site B'],
-            food: ['Local Cuisine', 'Cuisine A', 'Cuisine B'],
-            nature: ['Scenic Views', 'View A', 'View B'],
-            festivals: ['Festive Events', 'Event A', 'Event B'],
+            hiking: [' Annapurna Circuit Trek', 'Upper Mustang Trek', 'Gosaikunda Trek'],
+            temples: ['Janaki Temple', 'Boudhanath Stupa', 'Barahi Temple'],
+            hotels: ['Hyatt Regency', 'Dhulikhel M. Resort', 'Soaltee Crowne Plaza'],
+            adventure: ['Mountaineering', 'Water Rafting', 'Bungee Jumping'],
+            culture: ['Holi', 'Wood Crafting', 'Tharu Dance'],
+            food: ['Dal Bhat', 'Dhido', 'Yomari'],
+            nature: ['Chitwan National Park', 'Tilicho Lake', 'Lumbini'],
+            festivals: ['Dashain', 'Tihar', 'Shivaratri'],
             newCat1: ['New Category 1', 'Subcategory 1', 'Subcategory 2'], 
             newCat2: ['New Category 2', 'Subcategory 1', 'Subcategory 2'],
         };
