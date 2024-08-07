@@ -1,0 +1,136 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.slider-wrapper {
+    position: absolute; /* Changed to absolute positioning */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the slider horizontally and vertically */
+    text-align: center;
+}
+
+.items {
+    position: relative; /* Position relative to slider-wrapper */
+    width: 250px;
+    height: 250px;
+    margin: 0 auto; /* Center horizontally */
+    user-select: none;
+}
+
+.items .item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: all 300ms ease-in-out;
+    z-index: -1;
+    opacity: 0;
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item.active {
+    opacity: 1;
+    z-index: 99;
+    box-shadow: 0px 0px 105px -35px rgba(0, 0, 0, 0.75);
+}
+
+.item.prev {
+    z-index: 2;
+    opacity: 0.25;
+    transform: translate(-125%, -50%);
+}
+
+.item.next {
+    z-index: 2;
+    opacity: 0.25;
+    transform: translate(25%, -50%);
+}
+
+.items .button-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 275px;
+    z-index: 100;
+}
+
+.button-container .button {
+    color: #fff;
+    font-size: 32px;
+    cursor: pointer;
+    position: relative;
+    opacity: 0.75;
+    transition: all 300ms ease-in-out;
+}
+
+.button-container .button:hover {
+    opacity: 1;
+}
+
+.button-container .button:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 1);
+    border-radius: 50%;
+    z-index: -99;
+}
+
+.button-container .button:nth-child(1) {
+    float: left;
+}
+
+.button-container .button:nth-child(2) {
+    float: right;
+}
+
+.caption-container {
+    position: relative; /* Required for absolute positioning of the pseudo-element */
+    margin-top: 10px; /* Space between carousel and caption */
+    cursor: pointer;
+    overflow: hidden; /* Hide the pseudo-element overflow */
+}
+
+.caption-container::before {
+    content: ""; /* Required for pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: red; /* Red fill color */
+    transform: scaleX(0); /* Initially scale to 0 */
+    transform-origin: left; /* Scale from the left */
+    transition: transform 0.3s ease-in-out; /* Animation effect */
+    z-index: 0; /* Place behind the text */
+}
+
+.caption {
+    position: relative; /* Ensure text is above the pseudo-element */
+    font-size: 18px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.6); /* Added background for better visibility */
+    padding: 10px; /* Added padding for better readability */
+    border-radius: 5px; /* Optional: Adds rounded corners */
+    z-index: 1; /* Ensure text is above the pseudo-element */
+}
+
+.caption-container:hover::before {
+    transform: scaleX(1); /* Fill the container on hover */
+}

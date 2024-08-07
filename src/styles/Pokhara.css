@@ -1,0 +1,125 @@
+/* Scoped Carousel Styles */
+.pokhara-carousel {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.pokhara-carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.pokhara-carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.pokhara-carousel-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    filter: brightness(70%);
+}
+
+.pokhara-prev, .pokhara-next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.pokhara-next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.pokhara-prev:hover, .pokhara-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Scoped Content Styles */
+.pokhara-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pokhara-content-item {
+    display: flex;
+    width: 80%;
+    margin-bottom: 40px;
+    background-color: #e0f7fa;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pokhara-content-item:nth-child(even) .pokhara-content-image {
+    order: 2;
+}
+
+.pokhara-content-image {
+    width: 50%;
+    height: auto;
+}
+
+.pokhara-content-desc {
+    width: 50%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ffffff;
+}
+
+.pokhara-content-desc h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #00796b;
+}
+
+.pokhara-content-desc p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Scoped Gallery Styles */
+.pokhara-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pokhara-gallery-item {
+    width: 24%;
+    margin: 1%;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pokhara-gallery-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.pokhara-gallery-item img:hover {
+    transform: scale(1.05);
+}
