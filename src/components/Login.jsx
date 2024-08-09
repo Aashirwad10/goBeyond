@@ -1,30 +1,58 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import '../styles/Login.css';
 
-const Login = ({ setAuth }) => {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const navigate = useNavigate();
+const Login = () => {
+  const [formHeight, setFormHeight] = useState('70px');
+  const [formTop, setFormTop] = useState('90%');
+  const [linksTop, setLinksTop] = useState('80%');
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Here you would normally check the credentials with your Django backend
-        if (username === 'admin' && password === 'password') {
-            setAuth(true);
-            navigate('/dashboard');
-        } else {
-            alert('Invalid credentials');
-        }
-    };
+  const handleClick = () => {
+    setFormHeight('350px');
+    setFormTop('20%');
+    setLinksTop('65%');
+  };
 
-    return (
-        <form onSubmit={handleSubmit}>
-            <h2>Login</h2>
-            <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Username" required />
-            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" required />
-            <button type="submit">Login</button>
-        </form>
-    );
+  const handleFocus = (e) => {
+    const { className } = e.target;
+    document.querySelectorAll(`.${className}`).forEach(input => {
+      input.style.zIndex = '1';
+      input.style.background = 'rgba(0,0,0,.1)';
+    });
+    e.target.style.zIndex = '2';
+    e.target.style.background = '#fff';
+  };
+
+  return (
+    <form className="login" style={{ height: formHeight, transform: 'translateY(50px)' }}>
+      <div className="form-group" style={{ top: formTop }}>
+        <input
+          type="text"
+          className="user"
+          name="user"
+          placeholder="type your user name"
+          onFocus={handleFocus}
+        />
+        <input
+          type="password"
+          className="pwd"
+          name="pwd"
+          placeholder="type your password"
+          onFocus={handleFocus}
+        />
+      </div>
+      <span className="links" style={{ top: linksTop }}>
+        <a href="#">signup</a>
+        <a href="#">forgot password ?</a>
+      </span>
+      <br />
+      <input
+        type="button"
+        className="btn"
+        value="login"
+        onClick={handleClick}
+      />
+    </form>
+  );
 };
 
 export default Login;

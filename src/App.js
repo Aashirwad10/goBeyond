@@ -38,7 +38,7 @@ const App = () => {
 
     return (
         <div>
-            <NavigationBar />
+            {currentPath !== '/login' && <NavigationBar />} {/* Conditionally render NavigationBar */}
             <Routes>
                 <Route path="/login" element={<Login setAuth={setAuth} />} /> {/* Login route */}
                 <Route 
