@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Slider from './pages/Slider';
 import EverestPage from './pages/EverestPage';
@@ -12,9 +12,12 @@ import Essentials from './components/Essentials';
 
 import NavigationBar from './components/NavigationBar';
 import Footer from './components/Footer';
+import Login from './components/Login';
+import PrivateRoute from './components/PrivateRoute';
 
 const App = () => {
     const location = useLocation();
+    const [auth, setAuth] = useState(false); // State to manage authentication
 
     const getTitle = (path) => {
         switch (path) {
@@ -37,17 +40,81 @@ const App = () => {
         <div>
             <NavigationBar />
             <Routes>
-                <Route path="/" element={<Slider />} />
-                <Route path="/everest" element={<EverestPage />} />
-                <Route path="/mustang" element={<MustangPage />} />
-                <Route path="/pokhara" element={<PokharaCarousel />} />
-                <Route path="/kathmandu" element={<KathmanduPage />} />
-                <Route path="/whattosee" element={<Whattosee />} />
-                <Route path="/whattodo" element={<Whattodo />} />
-                <Route path="/exploremore" element={<Exploremore />} />
-                <Route path="/essentials" element={<Essentials />} />
+                <Route path="/login" element={<Login setAuth={setAuth} />} /> {/* Login route */}
+                <Route 
+                    path="/" 
+                    element={
+                        <PrivateRoute auth={auth}>
+                            <Slider />
+                        </PrivateRoute>
+                    } 
+                />
+                <Route 
+                    path="/everest" 
+                    element={
+                        <PrivateRoute auth={auth}>
+                            <EverestPage />
+                        </PrivateRoute>
+                    } 
+                />
+                <Route 
+                    path="/mustang" 
+                    element={
+                        <PrivateRoute auth={auth}>
+                            <MustangPage />
+                        </PrivateRoute>
+                    } 
+                />
+                <Route 
+                    path="/pokhara" 
+                    element={
+                        <PrivateRoute auth={auth}>
+                            <PokharaCarousel />
+                        </PrivateRoute>
+                    } 
+                />
+                <Route 
+                    path="/kathmandu" 
+                    element={
+                        <PrivateRoute auth={auth}>
+                            <KathmanduPage />
+                        </PrivateRoute>
+                    } 
+                />
+                <Route 
+                    path="/whattosee" 
+                    element={
+                        <PrivateRoute auth={auth}>
+                            <Whattosee />
+                        </PrivateRoute>
+                    } 
+                />
+                <Route 
+                    path="/whattodo" 
+                    element={
+                        <PrivateRoute auth={auth}>
+                            <Whattodo />
+                        </PrivateRoute>
+                    } 
+                />
+                <Route 
+                    path="/exploremore" 
+                    element={
+                        <PrivateRoute auth={auth}>
+                            <Exploremore />
+                        </PrivateRoute>
+                    } 
+                />
+                <Route 
+                    path="/essentials" 
+                    element={
+                        <PrivateRoute auth={auth}>
+                            <Essentials />
+                        </PrivateRoute>
+                    } 
+                />
             </Routes>
-            {currentPath !== '/' && <Footer title={getTitle(currentPath)} />}
+            {currentPath !== '/' && currentPath !== '/login' && <Footer title={getTitle(currentPath)} />}
         </div>
     );
 };
