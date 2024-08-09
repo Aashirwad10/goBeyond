@@ -1,124 +1,226 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
 
-:root {
-    --bgcolor: #cddc39;
-    --btncolor: #03a9f4;
-    --formcolor: #fbfbfb;
-  }
-  
-  body {
-    font-family: 'Open Sans', sans-serif;
-    background-color: var(--bgcolor);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-  }
-  
-  .login {
-    position: relative;
-    background: var(--formcolor);
-    width: 500px;
-    height: 70px;
-    overflow: hidden;
-    transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    border-radius: 4px;
-    box-shadow: 1px 1px 8px rgba(0,0,0,.2);
-    transform: translateY(-50px);
-  }
-  
-  .form-group {
-    position: relative;
-    top: 90%;
-    left: 8%;
-    transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    transition-delay: 1s;
-  }
-  
-  .user,
-  .pwd {
-    position: absolute;
-    display: block;
-    width: 80%;
-    height: 60px;
-    background: #fff;
-    font-size: 10pt;
-    text-transform: capitalize;
-    padding-left: 20px;
-    color: rgba(0,0,0,.1);
-    box-shadow: 1px 1px 20px rgba(0,0,0,.2);
-    border: none;
-    border-radius: 4px;
-    transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  }
-  
-  .user {
-    margin-bottom: 10%;
-    z-index: 2;
-    transition: .5s;
-  }
-  
-  .pwd {
-    margin-top: 10%;
-    z-index: 1;
-    background: rgba(0,0,0,.1);
-    transition: .5s;
-  }
-  
-  .user:focus,
-  .pwd:focus {
-    outline: none;
-    padding-left: 30px;
-  }
-  
-  .links {
-    position: absolute;
-    top: 80%;
-    left: 10%;
-    margin: 0 auto;
-    transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    transition-delay: 1.2s;
-  }
-  
-  .links a {
-    text-decoration: none;
-    display: block;
-    float: left;
-    width: 200px;
-    height: 40px;
-    text-align: left;
-    color: #3d5059;
-    font-size: 10pt;
-    font-weight: bolder;
-    text-transform: capitalize;
-  }
-  
-  .links a:last-child {
-    text-align: right;
-  }
-  
-  .btn {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 70px;
-    border: none;
-    background: var(--btncolor);
-    font-family: 'Open Sans', sans-serif;
-    text-align: center;
-    font-size: 18pt;
-    text-transform: capitalize;
-    color: #fff;
-    z-index: 3;
-    border-radius: 4px;
-    transition: .3s;
-  }
-  
-  .btn:hover,
-  .btn:focus {
-    background: #e91e63;
-    cursor: pointer;
-    outline: none;
-    letter-spacing: 5px;
-  }
-  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html, body {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  place-items: center;
+  background: #282a36;
+}
+
+::selection {
+  background: #1a75ff;
+  color: #fff;
+}
+
+.wrapper {
+  overflow: hidden;
+  max-width: 390px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .title-text {
+  display: flex;
+  width: 200%;
+}
+
+.wrapper .title {
+  width: 50%;
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.title.active {
+  margin-left: 0;
+}
+
+.wrapper .slide-controls {
+  position: relative;
+  display: flex;
+  height: 50px;
+  width: 100%;
+  overflow: hidden;
+  margin: 30px 0 10px 0;
+  justify-content: space-between;
+  border: 1px solid lightgrey;
+  border-radius: 15px;
+}
+
+.slide-controls .slide {
+  height: 100%;
+  width: 100%;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 48px;
+  cursor: pointer;
+  z-index: 1;
+  transition: all 0.6s ease;
+}
+
+.slide-controls label.signup {
+  color: #000;
+}
+
+.slide-controls .slider-tab {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  left: 0;
+  z-index: 0;
+  border-radius: 15px;
+  background: -webkit-linear-gradient(left, #003366, #004080, #0059b3, #0073e6);
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.wrapper .form-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.form-container .form-inner {
+  display: flex;
+  width: 200%;
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-container .form-inner form {
+  width: 50%;
+}
+
+.form-container .form-inner form.active {
+  margin-left: 0;
+}
+
+.form-inner form .field {
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.form-inner form .field input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding-left: 15px;
+  border-radius: 15px;
+  border: 1px solid lightgrey;
+  border-bottom-width: 2px;
+  font-size: 17px;
+  transition: all 0.3s ease;
+}
+
+.form-inner form .field input:focus {
+  border-color: #1a75ff;
+}
+
+.form-inner form .field input::placeholder {
+  color: #999;
+  transition: all 0.3s ease;
+}
+
+form .field input:focus::placeholder {
+  color: #1a75ff;
+}
+
+.form-inner form .pass-link {
+  margin-top: 5px;
+}
+
+.form-inner form .signup-link {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.form-inner form .pass-link a,
+.form-inner form .signup-link a {
+  color: #1a75ff;
+  text-decoration: none;
+}
+
+.form-inner form .pass-link a:hover,
+.form-inner form .signup-link a:hover {
+  text-decoration: underline;
+}
+
+form .btn {
+  height: 50px;
+  width: 100%;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+form .btn .btn-layer {
+  height: 100%;
+  width: 300%;
+  position: absolute;
+  left: -100%;
+  background: -webkit-linear-gradient(right, #003366, #004080, #0059b3, #0073e6);
+  border-radius: 15px;
+  transition: all 0.4s ease;
+}
+
+form .btn:hover .btn-layer {
+  left: 0;
+}
+
+form .btn input[type="submit"] {
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  position: relative;
+  background: none;
+  border: none;
+  color: #fff;
+  padding-left: 0;
+  border-radius: 15px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+/* Add these styles if they are missing */
+
+form {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+form.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Example for title switching */
+.title {
+  opacity: 0.5;
+}
+
+.title.active {
+  opacity: 1;
+}

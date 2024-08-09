@@ -36,9 +36,12 @@ const App = () => {
 
     const currentPath = location.pathname;
 
+    // Debug logging
+    console.log('Current Path:', currentPath);
+
     return (
         <div>
-            {currentPath !== '/login' && <NavigationBar />} {/* Conditionally render NavigationBar */}
+            {currentPath !== '/login' && currentPath !== '/signup' && <NavigationBar />} {/* Conditionally render NavigationBar */}
             <Routes>
                 <Route path="/login" element={<Login setAuth={setAuth} />} /> {/* Login route */}
                 <Route 
@@ -114,7 +117,7 @@ const App = () => {
                     } 
                 />
             </Routes>
-            {currentPath !== '/' && currentPath !== '/login' && <Footer title={getTitle(currentPath)} />}
+            {currentPath !== '/' && currentPath !== '/login' &&  <Footer title={getTitle(currentPath)} />}
         </div>
     );
 };
